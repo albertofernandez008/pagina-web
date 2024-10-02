@@ -1,0 +1,51 @@
+// C++ code
+//
+int sonido = 0;
+
+int segundos = 0;
+
+int my_3_segundos = 0;
+
+int my_10_segundos = 0;
+
+int counter;
+
+int counter2;
+
+int counter3;
+
+void setup()
+{
+  pinMode(2, INPUT);
+  pinMode(4, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(10, OUTPUT);
+}
+
+void loop()
+{
+  if (digitalRead(2) < 1) {
+    tone(4, 29, 2000); // play tone 10 (A#0 = 29 Hz)
+    for (counter = 0; counter < 1; ++counter) {
+      digitalWrite(12, HIGH);
+      delay(500); // Wait for 500 millisecond(s)
+      digitalWrite(12, LOW);
+      delay(500); // Wait for 500 millisecond(s)
+    }
+    tone(4, 29, 3000); // play tone 10 (A#0 = 29 Hz)
+    for (counter2 = 0; counter2 < 1; ++counter2) {
+      digitalWrite(11, HIGH);
+      delay(500); // Wait for 500 millisecond(s)
+      digitalWrite(11, LOW);
+      delay(500); // Wait for 500 millisecond(s)
+    }
+    tone(4, 30, 50000); // play tone 10.5 (undefined0 = 30 Hz)
+    for (counter3 = 0; counter3 < 1; ++counter3) {
+      digitalWrite(10, HIGH);
+      delay(1500); // Wait for 1500 millisecond(s)
+      digitalWrite(10, LOW);
+      delay(1.5); // Wait for 1.5 millisecond(s)
+    }
+  }
+}
